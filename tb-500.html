@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ============================================
+         HOW TO USE THIS TEMPLATE:
+         1. Save this file as "tb-500.html"
+         2. Update the <title> tag below with product name
+         3. Replace all placeholder content marked with comments
+         4. Update product images, molecular structure, and descriptions
+         ============================================ -->
+    <title>TB-500 - BioVault X Peptides</title>
+    
+    <!-- Link to the same CSS file for consistent styling -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="product-page">
+    
+    <!-- ============================================
+         NAVIGATION BAR (Simplified for product pages)
+         ============================================ -->
+    <nav class="navbar product-nav">
+        <div class="nav-container">
+            <!-- Back to Catalog Button -->
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                ← BACK TO CATALOG
+            </button>
+            
+            <!-- Site Logo/Title -->
+            <div class="nav-brand">
+                <h2>BioVault X</h2>
+                <span class="nav-subtitle"></span>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- ============================================
+         PRODUCT DETAIL SECTION
+         ============================================ -->
+    <div class="product-detail-container">
+        
+        <!-- Left Column: Images -->
+        <div class="product-images-column">
+            
+            <!-- Main Product Image -->
+            <div class="product-main-image">
+                <!-- CHANGE: Replace src with actual product image URL -->
+                <img src="images/peptide-box7.jpg" 
+                     alt="TB-500 Product" 
+                     onerror="this.src='https://via.placeholder.com/500x400/FFA500/000000?text=TB-500'">
+            </div>
+            
+            <!-- Molecular Structure Image -->
+            <div class="molecular-structure">
+                <h3>MOLECULAR COMPOSITION</h3>
+                <!-- CHANGE: Replace src with molecular structure diagram URL -->
+                <img src="images/tb-500.png" 
+                     alt="TB-500 Molecular Structure" 
+                     onerror="this.src='https://via.placeholder.com/500x300/FFA500/000000?text=C212H350N56O78'">
+                
+                <!-- CHANGE: Update molecular formula -->
+                <p class="molecular-formula">C₂₁₂H₃₅₀N₅₆O₇₈</p>
+            </div>
+        </div>
+        
+        <!-- Right Column: Information -->
+        <div class="product-info-column">
+            
+            <!-- Product Title and Price -->
+            <div class="product-header">
+                <!-- CHANGE: Update product name -->
+                <h1 class="product-title">TB-500</h1>
+                
+                <!-- CHANGE: Update product subtitle/type -->
+                <p class="product-subtitle">Thymosin Beta-4 Peptide • DO NOT CONSUME • FOR RESEARCH PURPOSES ONLY </p>
+                
+                <!-- CHANGE: Update price -->
+                <p class="product-detail-price">Price Upon Request</p>
+            </div>
+            
+            <!-- Scientific Description Section -->
+            <div class="scientific-description">
+                <h2>SCIENTIFIC OVERVIEW</h2>
+                
+                <div class="description-section">
+                    <h3>MECHANISM OF ACTION</h3>
+                    <p>
+                        TB-500 is a synthetic version of a naturally occurring peptide, Thymosin Beta-4, which plays a role in tissue repair and regeneration. TB-500 interacts with actin, a key structural protein, promoting cell migration and angiogenesis, thereby accelerating wound healing and tissue recovery in preclinical studies.
+                    </p>
+                </div>
+                
+                <div class="description-section">
+                    <h3>NEUROLOGICAL AND COGNITIVE PATHWAYS</h3>
+                    <ul class="effects-list">
+                        <li>May support recovery from neural tissue injury by promoting cytoskeletal remodeling</li>
+                        <li>Influences cellular signaling involved in cell migration and differentiation</li>
+                        <li>Potential indirect effects on neurogenesis due to improved vascularization and tissue repair</li>
+                    </ul>
+                </div>
+                
+                <div class="description-section">
+                    <h3>RESEARCH APPLICATIONS</h3>
+                    <p>
+                        TB-500 is commonly used in research on tissue repair, wound healing, muscle recovery, and fibrosis prevention. Preclinical studies suggest enhanced cellular migration, angiogenesis, and tissue regeneration. <strong>For laboratory research only. Not for human consumption.</strong>
+                    </p>
+                </div>
+                
+                <div class="description-section">
+                    <h3>PHARMACOKINETICS</h3>
+                    <p>
+                        Half-life: Approximately 2–6 hours<br>
+                        Peak plasma concentrations: Within 1–2 hours post-administration<br>
+                        Clearance: Primarily renal with minimal hepatic metabolism<br>
+                        Distribution: Rapidly diffuses into tissues, particularly injured or regenerating tissue
+                    </p>
+                </div>
+                
+                <div class="description-section">
+                    <h3>STORAGE & HANDLING</h3>
+                    <p>
+                        Store lyophilized powder at 2–8°C. Once reconstituted with bacteriostatic water, maintain at 2–8°C and use within 14 days. Protect from light and avoid freezing. Handle with appropriate laboratory safety equipment.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Request Product Section -->
+            <div class="request-section">
+                <p class="availability-notice">
+                    Limited availability • Verification required
+                </p>
+                
+                <!-- CHANGE: Update the product name in onclick function -->
+                <button class="request-product-btn" onclick="requestProduct('TB-500')">
+                    REQUEST THIS PRODUCT
+                </button>
+                
+                <p class="crypto-notice">
+                    This website is only a catalog. Request product for payment directions and contact info.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- FOOTER SECTION -->
+    <div class="footer product-footer">
+        <p>© 2025 Private Factory Sourced • Research Use Only • Not for Human Consumption</p>
+        <p style="margin-top: 10px; font-size: 0.8em;">All products are strictly intended for laboratory research</p>
+    </div>
+    
+    <!-- JavaScript for product page functionality -->
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

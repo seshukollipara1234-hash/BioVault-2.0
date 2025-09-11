@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioVault</title>
+    
+    <!-- Link to external CSS file for better organization -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- ============================================
+         PASSWORD PROTECTION SCREEN
+         This section is shown first when page loads
+         ============================================ -->
+    <div id="password-screen">
+        <pre class="ascii-art">
+    ___  ___  ___  ___  ___  ___  ___ 
+   |   ||   ||   ||   ||   ||   ||   |
+   | A || C || C || E || S || S ||   |
+   |___||___||___||___||___||___||___|
+        </pre>
+        
+        <h1>RESTRICTED ACCESS</h1>
+        <p>ONLY PEOPLE IN THE NETWORK MAY ENTER</p>
+        
+        <div class="password-container">
+            <label for="password-input" class="password-label">Enter Access Code:</label>
+            <input type="password" id="password-input" placeholder="********">
+            <br>
+            <button onclick="checkPassword()" class="enter-btn">ENTER</button>
+        </div>
+    </div>
+    
+    <!-- ============================================
+         MAIN CONTENT (HIDDEN UNTIL PASSWORD IS CORRECT)
+         ============================================ -->
+    <div id="main-content">
+        
+        <!-- ============================================
+             NAVIGATION BAR WITH SEARCH AND REQUEST BUTTON
+             ============================================ -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Site Logo/Title -->
+                <div class="nav-brand">
+                    <h2>BioVault X</h2>
+                    <span class="nav-subtitle"></span>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" 
+                           id="search-bar" 
+                           class="search-input" 
+                           placeholder="Search peptides..."
+                           onkeyup="filterProducts()">
+                    <span class="search-icon"></span>
+                </div>
+                
+                <!-- Request New Item Button -->
+                <button class="request-btn" onclick="requestNewItem()">
+                    REQUEST NEW ITEM
+                </button>
+            </div>
+        </nav>
+        
+        <!-- HEADER SECTION -->
+        <div class="header">
+            <h1>PEPTIDE CATALOG</h1>
+            <p>Private Factory Sourced • Research Purposes Only • Lab-Grade Quality</p>
+        </div>
+        
+        <!-- ============================================
+             PRODUCTS GRID
+             HOW TO ADD NEW PRODUCTS:
+             1. Copy an entire <div class="product-card">...</div> block
+             2. Paste it before the closing </div> of products-grid
+             3. Update the following in your new product card:
+                - data-name: Product name for search (lowercase)
+                - img src: Your product image URL
+                - product-name: Display name of product
+                - product-price: Price in crypto
+                - onclick: Change 'product1' to unique ID like 'product5'
+             ============================================ -->
+        <div class="products-grid" id="products-grid">
+            
+            <!-- PRODUCT 1: HGH 191AA -->
+            <div class="product-card" data-name="hgh 191aa growth hormone">
+                <img src="images/hgh-191aa.png" 
+                     alt="HGH 191AA" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=HGH+191AA'">
+                <h2 class="product-name">HGH 191AA 36iu</h2>
+                <p class="product-price">350 USD</p>
+                <button class="learn-more-btn" onclick="goToProduct('hgh-191aa')">
+                    LEARN MORE
+                </button>
+            </div>
+            
+            <!-- PRODUCT 2: RETATRUTIDE -->
+            <div class="product-card" data-name="retatrutide glp-1 agonist">
+                <img src="images/retatrutide.png" 
+                     alt="Retatrutide" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=RETATRUTIDE'">
+                <h2 class="product-name">RETATRUTIDE 10mg</h2>
+                <p class="product-price">150 USD</p>
+                <button class="learn-more-btn" onclick="goToProduct('retatrutide')">
+                    LEARN MORE
+                </button>
+            </div>
+            
+            <!-- PRODUCT 3: BPC-157 -->
+            <div class="product-card" data-name="bpc-157 healing peptide">
+                <img src="images/bpc-157.png" 
+                     alt="BPC-157" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=BPC-157'">
+                <h2 class="product-name">BPC-157</h2>
+                <p class="product-price">Price Upon Request</p>
+                <button class="learn-more-btn" onclick="goToProduct('bpc-157')">
+                    LEARN MORE
+                </button>
+            </div>
+            
+            <!-- PRODUCT 4: TB-500 -->
+            <div class="product-card" data-name="tb-500 thymosin beta recovery">
+                <img src="images/tb-500.png" 
+                     alt="TB-500" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=TB-500'">
+                <h2 class="product-name">TB-500</h2>
+                <p class="product-price">Price Upon Request</p>
+                <button class="learn-more-btn" onclick="goToProduct('tb-500')">
+                    LEARN MORE
+                </button>
+            </div>
+
+            <!-- PRODUCT 5: GHK-Cu -->
+            <div class="product-card" data-name="ghk-cu copper peptide">
+                <img src="images/ghk-cu.png" 
+                     alt="GHK-Cu" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=GHK-Cu'">
+                <h2 class="product-name">GHK-Cu 50mg</h2>
+                <p class="product-price">50 USD</p>
+                <button class="learn-more-btn" onclick="goToProduct('ghk-cu')">
+                    LEARN MORE
+                </button>
+            </div>
+
+            <!-- PRODUCT 6: IPAMORELIN -->
+            <div class="product-card" data-name="ipamorelin gh secretagogue">
+                <img src="images/ipamorelin.png" 
+                     alt="Ipamorelin" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=Ipamorelin'">
+                <h2 class="product-name">IPAMORELIN 10mg</h2>
+                <p class="product-price">90 USD</p>
+                <button class="learn-more-btn" onclick="goToProduct('ipamorelin')">
+                    LEARN MORE
+                </button>
+            </div>
+
+            <!-- PRODUCT 7: CJC-1295 No DAC -->
+            <div class="product-card" data-name="cjc-1295 no dac gh analog">
+                <img src="images/cjc-no-dac.png" 
+                     alt="CJC-1295 No DAC" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=CJC-No-DAC'">
+                <h2 class="product-name">CJC-1295 No DAC 10mg</h2>
+                <p class="product-price">90 USD</p>
+                <button class="learn-more-btn" onclick="goToProduct('cjc-no-dac')">
+                    LEARN MORE
+                </button>
+            </div>
+
+            <!-- PRODUCT 8: TESAMORELIN -->
+            <div class="product-card" data-name="tesamorelin gh analog">
+                <img src="images/tesamorelin.png" 
+                     alt="Tesamorelin" 
+                     class="product-image"
+                     onerror="this.src='https://via.placeholder.com/300x200/FFA500/000000?text=Tesamorelin'">
+                <h2 class="product-name">TESAMORELIN</h2>
+                <p class="product-price">Price Upon Request</p>
+                <button class="learn-more-btn" onclick="goToProduct('tesamorelin')">
+                    LEARN MORE
+                </button>
+            </div>
+            
+        </div>
+        
+        <!-- No Results Message (hidden by default) -->
+        <div id="no-results" class="no-results" style="display: none;">
+            <p>No products found matching your search.</p>
+        </div>
+        
+        <!-- FOOTER SECTION -->
+        <div class="footer">
+            <p>© 2025 Private Factory Sourced • All Sales Final • Encrypted Communications Only</p>
+            <p style="margin-top: 10px; font-size: 0.8em;">Telegram: BioVaultX</p>
+        </div>
+        
+    </div>
+    
+    <!-- Link to external JavaScript file for better organization -->
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
