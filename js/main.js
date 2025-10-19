@@ -21,7 +21,7 @@
 const CORRECT_PASSWORD = "P3pt!X9r"; // CHANGE THIS to your desired password
 
 // Contact email for product requests (can be encrypted email or contact method)
-const CONTACT_METHOD = "the person who u got the password from"; // CHANGE THIS to your contact
+const CONTACT_METHOD = "https://t.me/BioVaultX"; // CHANGE THIS to your contact
 
 // Product page URL pattern - change if using different folder structure
 const PRODUCT_PAGE_PATTERN = "{product}.html"; // {product} will be replaced with product ID
