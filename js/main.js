@@ -27,7 +27,7 @@ const CONTACT_METHOD = "https://t.me/BioVaultX"; // CHANGE THIS to your contact
 const PRODUCT_PAGE_PATTERN = "{product}.html"; // {product} will be replaced with product ID
 
 // Google Sheets Web App URL for logging requests
-const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxlO9ZHHEB9t0GtBc7wI4uVHJwEXiuI-vP-5QEzFMOjNIjbYoVwyMZ_mp0VO2TkLdWLwA/exec';
+const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxb0goTSH0uB3IhBasZv2FWAgCIrve-goEBG1zng6S1wGS7LswGPxuL_uVijjVHGw7AAQ/exec';
 
 // Your Telegram contact link
 const TELEGRAM_LINK = 'https://t.me/BioVaultX';
