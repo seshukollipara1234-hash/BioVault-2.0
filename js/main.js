@@ -21,7 +21,7 @@
 const CORRECT_PASSWORD = "P3pt!X9r"; // CHANGE THIS to your desired password
 
 // Contact email for product requests (can be encrypted email or contact method)
-const CONTACT_METHOD = "https://t.me/BioVaultX"; // CHANGE THIS to your contact
+const CONTACT_METHOD = "https://matrix.to/#/!okYpZggKNkqsYtEICj:matrix.org?via=matrix.org"; // CHANGE THIS to your contact
 
 // Product page URL pattern - change if using different folder structure
 const PRODUCT_PAGE_PATTERN = "{product}.html"; // {product} will be replaced with product ID
@@ -30,8 +30,8 @@ const PRODUCT_PAGE_PATTERN = "{product}.html"; // {product} will be replaced wit
 const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxb0goTSH0uB3IhBasZv2FWAgCIrve-goEBG1zng6S1wGS7LswGPxuL_uVijjVHGw7AAQ/exec';
 
 // Your Telegram contact link
-const TELEGRAM_LINK = 'https://t.me/BioVaultX';
-
+const TELEGRAM_LINK = 'https://matrix.to/#/!okYpZggKNkqsYtEICj:matrix.org?via=matrix.org';
+const GC_LINK = 'https://matrix.to/#/!okYpZggKNkqsYtEICj:matrix.org?via=matrix.org'; // CHANGE THIS to your encrypted GC link
 /* ============================================
    GOOGLE SHEETS LOGGING FUNCTION
    ============================================ */
@@ -235,10 +235,10 @@ function requestNewItem() {
           `Product: ${productName}\n` +
           `Name: ${customerName}\n\n` +
           `NEXT STEP:\n` +
-          `Click OK to open Telegram and contact us with your Request ID.`);
+          `Click OK to open the encrypted GC and contact us with your Request ID.`);
     
     // Open Telegram link
-    window.open(TELEGRAM_LINK, '_blank');
+    window.open(GC_LINK, '_blank');
     
     // Log the request locally
     console.log('New product request:', {
@@ -328,10 +328,10 @@ function requestProduct(productName) {
           `Quantity: ${quantity}\n` +
           `Name: ${customerName}\n\n` +
           `NEXT STEP:\n` +
-          `Click OK to open Telegram and contact us with your Order ID.`);
+          `Click OK to open the encrypted GC and contact us with your Order ID.`);
     
     // Open Telegram link
-    window.open(TELEGRAM_LINK, '_blank');
+    window.open(GC_LINK, '_blank');
     
     // Log the request
     console.log('Product request confirmed:', {
